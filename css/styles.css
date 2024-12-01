@@ -1,3 +1,100 @@
-.task__done {
-text-decoration: line-through;
+html {
+    box-sizing: border-box;
 }
+
+*, ::after, ::before {
+    box-sizing: inherit;
+}
+
+
+.body {
+    background-color: #EEEEEE;
+}
+
+.task {
+    text-align: left;
+    margin: auto;
+    padding: 20px;
+    border-bottom: 2px solid;
+    border-color: #EEEEEE;
+}
+
+
+.task__done {
+    text-align: left;
+    padding: 20px;
+    border-bottom: 2px solid;
+    border-color: #EEEEEE;
+    text-decoration: line-through;
+}
+
+
+.button {
+    background-color: teal;
+    font-size: 18px;
+    color: white;
+    border: none;
+    margin:10px 20px;
+    padding: 10px;
+    /* flex-grow: 1; */
+}
+
+.doneButton {
+    text-align: left;
+    float: inline-start;
+    margin-right: 10px;
+}
+
+.removeButton {
+    text-align: right;
+    float: inline-end;
+}
+
+
+.section {
+    background-color: white;
+    max-width: 80%;
+    margin: 20px auto;
+    border: none;
+    text-align: center;
+}
+
+.section__header {
+    font-size: 25px;
+    font-weight: bold;
+    padding: 20px;
+    text-align: left;
+    border-bottom: 2px solid;
+    border-color: #EEEEEE;
+}
+
+.form {
+    display: flex;
+    justify-content: center;
+}
+
+.newTask {
+    margin: 20px 10px;
+    padding: 10px;
+    overflow-x: scroll;
+    max-width: 80%;
+    flex-basis: 70%;
+    /* flex-grow: 3; */
+}
+
+.tasks {
+    padding-left: 0px;
+    list-style: none;
+    /* margin: 10px;
+    padding: 10px; */
+}
+
+@media (max-width: 767px) {
+    .form {
+        flex-wrap: wrap;
+    }
+    .newTask {
+        flex-basis: 100%;
+    }
+}
+
