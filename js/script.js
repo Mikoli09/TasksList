@@ -1,14 +1,14 @@
 {
 
     const taskTable = [
-        {
-            content: "pierwsze zadanie do zrobienia",
-            status: "done",
-        },
-        {
-            content: "drugie zadanie do zrobienia",
-            status: "toDo",
-        },
+        // {
+        //     content: "pierwsze zadanie do zrobienia",
+        //     status: "done",
+        // },
+        // {
+        //     content: "drugie zadanie do zrobienia",
+        //     status: "toDo",
+        // },
     ];
 
 
@@ -23,23 +23,7 @@
     };
 
 
-    const render = () => {
-        let htmlString = "";
-
-        for (const taskTableElement of taskTable) {
-            htmlString +=
-                `
-                <li class="task" >
-                <button class="doneButton js-doneButton">${taskTableElement.status === "done" ? "✔" : ""}</i></button> 
-                <span class="content ${taskTableElement.status === "done" ? "content__done\"" :"\""}> ${taskTableElement.content}</span>
-                <button class="removeButton js-removeButton">🗑</button>
-                 </li>
-                `
-        };
-
-        document.querySelector(".js-tasks").innerHTML = htmlString; // - w lekcji był w tym miejscu, ale nie wiem dlaczego
-
-
+    const bindEvents = () => {
         const removeButtons = document.querySelectorAll(".js-removeButton");  // node list
 
         removeButtons.forEach((removeButton, index) => {
@@ -47,6 +31,7 @@
                 removeTask(index);
             });
         });
+
         const toggleDoneButtons = document.querySelectorAll(".js-doneButton");
 
         toggleDoneButtons.forEach((doneButton, index) => {
@@ -55,6 +40,29 @@
             });
 
         });
+    };
+
+
+
+
+    const render = () => {
+        let htmlString = "";
+
+        for (const taskTableElement of taskTable) {
+            htmlString +=
+                `
+                <li class="task" >
+                <button class="doneButton js-doneButton">${taskTableElement.status === "done" ? "✔" : ""}</i></button> 
+                <span class="content ${taskTableElement.status === "done" ? "content__done\"" : "\""}> ${taskTableElement.content}</span>
+                <button class="removeButton js-removeButton">🗑</button>
+                 </li>
+                `
+        };
+
+        document.querySelector(".js-tasks").innerHTML = htmlString; // - w lekcji był w tym miejscu, ale nie wiem dlaczego
+
+        bindEvents();
+
     };
 
 
