@@ -4,18 +4,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"
+        integrity="sha512-oHDEc8Xed4hiW6CxD7qjbnI+B07vDdX7hEPTvn9pSZO1bcRqHp8mj9pyr+8RVC2GmtEfI2Bi9Ke9Ass0as+zpg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Tasks list</title>
     <link rel="stylesheet" href="css/styles.css">
     <script defer src="js/script.js"></script>
+    <link
+    href="https://fonts.googleapis.com/css2?family=Lato&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+    rel="stylesheet">
 </head>
 
 <body class="body">
-    <main>
-        <p>Lista zadań</p>
+    <main class="main">
+        <header>
+            <h1 class="main__header">Lista zadań</h1>
+        </header>
         <section class="section">
             <header class="section__header">Dodaj nowe zadanie</header>
             <form class="form js-form">
-                <input class="newTask js-newTask"></input>
+                <input class="newTask js-newTask" placeholder="Co jest do zrobienia?"></input>
                 <button class="button js-button">Dodaj zadanie</button>
             </form>
         </section>

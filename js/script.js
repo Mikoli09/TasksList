@@ -11,13 +11,14 @@
         },
     ];
 
+
     const removeTask = (index) => {
         taskTable.splice(index, 1);
         render();
     };
 
-    const taskDoneButton = (indexWTabeli) => {
-        taskTable[indexWTabeli].status === "done" ? taskTable[indexWTabeli].status = "toDo" : taskTable[indexWTabeli].status = "done";
+    const taskDone = (index) => {
+        taskTable[index].status === "done" ? taskTable[index].status = "toDo" : taskTable[index].status = "done";
         render();
     };
 
@@ -26,32 +27,34 @@
         let htmlString = "";
 
         for (const taskTableElement of taskTable) {
-            htmlString += `
-                <li ${taskTableElement.status === "done" ? "class=\"task__done\"" : "class=\"task\"" }>
-                <button class="doneButton js-doneButton"">ZROBIONE</button>
-                ${taskTableElement.content}
-                <button class="removeButton js-removeButton">USUŃ</button>
+            htmlString +=
+                `
+                <li class="task" >
+                <button class="doneButton js-doneButton">${taskTableElement.status === "done" ? "✔" : ""}</i></button> 
+                <span class="content ${taskTableElement.status === "done" ? "content__done\"" :"\""}> ${taskTableElement.content}</span>
+                <button class="removeButton js-removeButton">🗑</button>
                  </li>
-        `};
-        document.querySelector(".js-tasks").innerHTML = htmlString;
+                `
+        };
 
-        const removeButtons = document.querySelectorAll(".js-removeButton");
+        document.querySelector(".js-tasks").innerHTML = htmlString; // - w lekcji był w tym miejscu, ale nie wiem dlaczego
+
+
+        const removeButtons = document.querySelectorAll(".js-removeButton");  // node list
 
         removeButtons.forEach((removeButton, index) => {
             removeButton.addEventListener("click", () => {
                 removeTask(index);
             });
-
-            const toggleDoneButtons = document.querySelectorAll(".js-doneButton");
-
-            toggleDoneButtons.forEach((doneButton, index) => {
-                doneButton.addEventListener("click", () => {
-                    taskDoneButton(index);
-                });
-
-            });
         });
+        const toggleDoneButtons = document.querySelectorAll(".js-doneButton");
 
+        toggleDoneButtons.forEach((doneButton, index) => {
+            doneButton.addEventListener("click", () => {
+                taskDone(index);
+            });
+
+        });
     };
 
 
@@ -61,23 +64,23 @@
             content: newTaskContent,
             status: "toDo",
         });
-
         render();
     };
+
 
     const onFormSubmit = (event) => {
         event.preventDefault();
 
-        const newTaskContent = document.querySelector(".js-newTask").value.trim();
-        //console.log(newTaskContent);
+        let newTaskContent = document.querySelector(".js-newTask").value.trim();
 
-        if (newTaskContent === "") {
+        if (newTaskContent.trim() === "") {
             document.querySelector(".js-newTask").focus();
             return;
         };
-        addNewTablePosition(newTaskContent);
-        console.log(taskTable);
 
+        addNewTablePosition(newTaskContent);
+
+        document.querySelector(".js-newTask").value = "";
     };
 
 
