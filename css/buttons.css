@@ -1,0 +1,31 @@
+
+.toggleDoneButton {
+    background-color: green;
+    width: 25px;
+    height: 25px;
+    border: none;
+    cursor: pointer;
+    flex-shrink: 0;
+    color: white;
+}
+
+.removeButton {
+    background-color: red;
+    width: 25px;
+    height: 25px;
+    border: none;
+    text-align: center;
+    cursor: pointer;
+    flex-shrink: 0;
+    color: white;
+}
+
+.insertTaskButton {
+    background-color: teal;
+    font-size: 18px;
+    color: white;
+    border: none;
+    padding: 10px;
+    max-width: 100%;
+    cursor: pointer;
+}

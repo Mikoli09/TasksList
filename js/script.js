@@ -1,15 +1,6 @@
 {
 
-    const taskTable = [
-        // {
-        //     content: "pierwsze zadanie do zrobienia",
-        //     status: "done",
-        // },
-        // {
-        //     content: "drugie zadanie do zrobienia",
-        //     status: "toDo",
-        // },
-    ];
+    const taskTable = [];
 
 
     const removeTask = (index) => {
@@ -17,7 +8,7 @@
         render();
     };
 
-    const taskDone = (index) => {
+    const toggletaskDone = (index) => {
         taskTable[index].status === "done" ? taskTable[index].status = "toDo" : taskTable[index].status = "done";
         render();
     };
@@ -32,13 +23,12 @@
             });
         });
 
-        const toggleDoneButtons = document.querySelectorAll(".js-doneButton");
+        const toggleDoneButtons = document.querySelectorAll(".js-toggleDoneButton");
 
-        toggleDoneButtons.forEach((doneButton, index) => {
-            doneButton.addEventListener("click", () => {
-                taskDone(index);
+        toggleDoneButtons.forEach((toggleDoneButton, index) => {
+            toggleDoneButton.addEventListener("click", () => {
+                toggletaskDone(index);
             });
-
         });
     };
 
@@ -51,20 +41,19 @@
         for (const taskTableElement of taskTable) {
             htmlString +=
                 `
-                <li class="task" >
-                <button class="doneButton js-doneButton">${taskTableElement.status === "done" ? "✔" : ""}</i></button> 
+                <li class="task">
+                <button class="toggleDoneButton js-toggleDoneButton">${taskTableElement.status === "done" ? "✔" : ""}</button> 
                 <span class="content ${taskTableElement.status === "done" ? "content__done\"" : "\""}> ${taskTableElement.content}</span>
                 <button class="removeButton js-removeButton">🗑</button>
                  </li>
                 `
         };
 
-        document.querySelector(".js-tasks").innerHTML = htmlString; // - w lekcji był w tym miejscu, ale nie wiem dlaczego
+        document.querySelector(".js-tasks").innerHTML = htmlString;
 
         bindEvents();
 
     };
-
 
 
     const addNewTablePosition = (newTaskContent) => {
@@ -99,7 +88,6 @@
         const form = document.querySelector(".js-form");
 
         form.addEventListener("submit", onFormSubmit);
-
     };
 
     init();

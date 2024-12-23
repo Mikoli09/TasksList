@@ -1,0 +1,25 @@
+
+.content {
+    text-align: left;
+    word-break: break-word;
+    margin: 10px 10px;
+    flex-grow: 1;
+}
+
+.content__done {
+    text-decoration: line-through;
+}
+
+.task {
+    display: flex;
+    align-items: center;
+    padding: 10px 5px;
+    border-bottom: 2px solid;
+    border-color: #EEEEEE;
+}
+
+.task__done {
+    text-decoration: line-through;
+}
+
+
