@@ -1,7 +1,7 @@
 # Tasks list
 
 ## Demo:
-Check my demo [here](https://mikoli09.github.io/homepage/)
+Check my demo [here](https://mikoli09.github.io/TasksList/)
 
 
 
