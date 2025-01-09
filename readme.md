@@ -6,10 +6,9 @@ Check my demo [here](https://mikoli09.github.io/TasksList/)
 
 
 ## Description:
-You may find here a simple taskslist managed.
+You may find here a simple task manager.
 You can add new positions, change status and delete tasks.
 Enjoy and keep your tasks organized.
-
 
 
 ## Technologies used
