@@ -22,3 +22,11 @@
     border-width: 2px;
     flex-grow: 1;
 }
+
+@media (max-width: 767px) {
+    .form {
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+
+}

@@ -23,12 +23,3 @@ html {
     max-width: 90%;
     margin: 20px 10px;
 }
-
-
-@media (max-width: 767px) {
-    .form {
-        flex-direction: column;
-        flex-wrap: wrap;
-    }
-
-}
