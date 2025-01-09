@@ -11,6 +11,9 @@ You can add new positions, change status and delete tasks.
 Enjoy and keep your tasks organized.
 
 
+![taskslistGIF](/images/taskslist.gif)
+
+
 ## Technologies used
 - **HTML** - website structure,
 - **CSS** - styling, BEM methodology included,
