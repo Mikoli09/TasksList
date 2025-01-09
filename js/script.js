@@ -8,7 +8,7 @@
         render();
     };
 
-    const toggletaskDone = (index) => {
+    const toggleTaskDone = (index) => {
         taskTable[index].status === "done" ? taskTable[index].status = "toDo" : taskTable[index].status = "done";
         render();
     };
@@ -27,7 +27,7 @@
 
         toggleDoneButtons.forEach((toggleDoneButton, index) => {
             toggleDoneButton.addEventListener("click", () => {
-                toggletaskDone(index);
+                toggleTaskDone(index);
             });
         });
     };
