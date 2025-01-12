@@ -19,6 +19,14 @@
     color: white;
 }
 
+.listButton:hover {
+    background-color: hsl(120, 100%, 30%);
+}
+
 .listButton--remove{
     background-color: red;
+}
+
+.listButton--remove:hover{
+    background-color: hsl(0, 100%, 70%);
 }

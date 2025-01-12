@@ -1,7 +1,5 @@
 {
-
     const taskTable = [];
-
 
     const removeTask = (index) => {
         taskTable.splice(index, 1);
@@ -12,7 +10,6 @@
         taskTable[index].status === "done" ? taskTable[index].status = "toDo" : taskTable[index].status = "done";
         render();
     };
-
 
     const bindEvents = () => {
         const removeButtons = document.querySelectorAll(".js-listButton--remove");
@@ -32,9 +29,6 @@
         });
     };
 
-
-
-
     const render = () => {
         let htmlString = "";
 
@@ -52,9 +46,7 @@
         document.querySelector(".js-tasks").innerHTML = htmlString;
 
         bindEvents();
-
     };
-
 
     const addNewTablePosition = (newTaskContent) => {
         taskTable.push({
@@ -62,8 +54,10 @@
             status: "toDo",
         });
         render();
-    };
 
+        newTaskContent.value = "";
+        document.querySelector(".js-newTask").focus();
+    };
 
     const onFormSubmit = (event) => {
         event.preventDefault();
@@ -79,8 +73,6 @@
 
         document.querySelector(".js-newTask").value = "";
     };
-
-
 
     init = () => {
         render();
