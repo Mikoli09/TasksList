@@ -96,6 +96,10 @@
         return elementStatus === "done" ? " task__hidden" : ""
     };
 
+    const checkmarkVisible = elementStatus => elementStatus === "done" ? "✔" : "";
+    
+    const checkIfLineThrough = elementStatus => elementStatus === "done" ? "content__done\"" : "\"";
+
     const renderTasks = () => {
         let htmlString = "";
 
@@ -103,8 +107,8 @@
             htmlString +=
                 `
                             <li class="task${checkIfHide(status)}">
-                            <button class="listButton js-listButton">${status === "done" ? "✔" : ""}</button> 
-                            <span class="content ${status === "done" ? "content__done\"" : "\""}> ${content}</span>
+                            <button class="listButton js-listButton">${checkmarkVisible(status)}</button> 
+                            <span class="content ${checkIfLineThrough(status)}> ${content}</span>
                             <button class="listButton listButton--remove js-listButton--remove">🗑</button>
                              </li>
                             `
@@ -113,9 +117,7 @@
         document.querySelector(".js-tasks").innerHTML = htmlString;
     };
 
-    const headerButtonVisibility = () => {
-        return tasksTable.length != 0 ? "" : "task__hidden"
-    };
+    const headerButtonVisibility = () => tasksTable.length != 0 ? "" : "task__hidden";
 
     const textSwap = () => hideDoneTasks ? "Pokaż ukryte" : "Ukryj ukończone";
 
@@ -125,7 +127,6 @@
 
         return tasksTable.every(checkIfAllDone) ? "disabled" : "";
     };
-
 
     const renderButtons = () => {
 
@@ -138,7 +139,6 @@
 
         document.querySelector(".header__container").innerHTML = headerContainerString;
     };
-
 
     const render = () => {
         renderTasks();
