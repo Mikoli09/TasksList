@@ -1,7 +1,5 @@
-
 .section {
     background-color: white;
-    /* max-width: 90%; */
     margin: 20px 10px;
     border: none;
     text-align: center;
@@ -10,12 +8,41 @@
 .section__header {
     font-size: 25px;
     font-weight: bold;
-    padding: 20px;
+    padding: 20px 15px;
     text-align: left;
     border-bottom: 2px solid;
     border-color: #EEEEEE;
 }
 
+.header__container {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.header__span {
+    flex-grow: 1;
+    text-align: left;
+}
+
 .section__container {
     padding: 10px;
+}
+
+.header__button {
+    font-size: 18px;
+    color: teal;
+    border: none;
+    background-color: white;
+    transition: 0.5s;
+}
+
+.header__button:hover {
+    cursor: pointer;
+    color: hsl(180, 100%, 35%);
+}
+
+.header__button:disabled {
+    color: gray;
+    cursor: auto;
 }
