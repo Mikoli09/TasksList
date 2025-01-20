@@ -73,7 +73,6 @@
         const hideDoneButton = document.querySelector(".js-header__button--hide");
 
         if (!hideDoneButton) {
-            console.log("Brak przycisku");
             return;
         }
         hideDoneButton.addEventListener("click", hideFinishedTasks);
@@ -84,7 +83,6 @@
         if (!setAllTasksDoneButton) {
             return;
         }
-
         setAllTasksDoneButton.addEventListener("click", toggleAllTasksDone);
 
     };
@@ -98,7 +96,7 @@
 
     const checkmarkVisible = elementStatus => elementStatus === "done" ? "✔" : "";
     
-    const checkIfLineThrough = elementStatus => elementStatus === "done" ? "content__done\"" : "\"";
+    const checkIfLineThrough = elementStatus => elementStatus === "done" ? "content__done" : "";
 
     const renderTasks = () => {
         let htmlString = "";
@@ -108,7 +106,7 @@
                 `
                             <li class="task${checkIfHide(status)}">
                             <button class="listButton js-listButton">${checkmarkVisible(status)}</button> 
-                            <span class="content ${checkIfLineThrough(status)}> ${content}</span>
+                            <span class="content ${checkIfLineThrough(status)}">${content}</span>
                             <button class="listButton listButton--remove js-listButton--remove">🗑</button>
                              </li>
                             `
