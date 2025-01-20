@@ -8,6 +8,7 @@ Check my demo [here](https://mikoli09.github.io/TasksList/)
 ## Description:
 You may find here a simple task manager.
 You can add new positions, change status and delete tasks.
+If you want to hide done tasks or finish all of them then use buttons on the right side.
 Enjoy and keep your tasks organized.
 
 
