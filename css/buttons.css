@@ -1,12 +1,11 @@
-
 .insertTaskButton {
     background-color: teal;
     font-size: 18px;
     color: white;
     border: none;
     padding: 10px;
-    max-width: 100%;
     cursor: pointer;
+    transition: 0.5s;
 }
 
 .listButton {
@@ -17,16 +16,28 @@
     cursor: pointer;
     flex-shrink: 0;
     color: white;
+    transition: 0.5s;
+}
+
+.listButton--remove {
+    background-color: red;
 }
 
 .listButton:hover {
     background-color: hsl(120, 100%, 30%);
 }
 
-.listButton--remove{
-    background-color: red;
+.listButton--remove:hover {
+    background-color: hsl(0, 100%, 70%);
 }
 
-.listButton--remove:hover{
-    background-color: hsl(0, 100%, 70%);
+.listButton:active {
+    border: solid;
+    border-color: black;
+    border-width: 1px;
+}
+
+.insertTaskButton:hover {
+    background-color: hsl(180, 100%, 30%);
+    transform: scale(1.02);
 }
